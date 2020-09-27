@@ -17,7 +17,17 @@ const commentRoutes 	= require('./routes/comments'),
 	  indexRoutes 	 	= require('./routes/index');
 
 
-mongoose.connect('mongodb+srv://dev:pr0grammr@cluster0.j5whg.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+// mongoose.connect('mongodb+srv://dev:pr0grammr@cluster0.j5whg.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+// 	  useCreateIndex: true
+//     })
+//     .then(() => console.log('Connected to DB!'))
+//     .catch(error => console.log(error.message));
+
+console.log(process.env.DATABASEURL);
+
+mongoose.connect(process.env.DATABASEURL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
 	  useCreateIndex: true
